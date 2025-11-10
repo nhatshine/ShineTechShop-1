@@ -1,14 +1,6 @@
-<?php
-// Cấu hình cơ bản
-$page_title = "ShineTechShop - Click & Tech";
-$current_year = date('Y');
-
-// Thông tin liên hệ
-$contact = [
-    'phone' => '+84383581562',
-    'email' => 'ShineTechShop@gmail.com',
-    'address' => '1132 Đường Láng'
-];
+<?php 
+// Include file header
+include 'header.php'; 
 
 // Thông tin sản phẩm (có thể lấy từ database)
 $product = [
@@ -21,184 +13,10 @@ $product = [
     'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
 ];
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title><?php echo $page_title; ?></title>
 
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-
-    <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
-
-    <!-- Slick -->
-    <link type="text/css" rel="stylesheet" href="css/slick.css"/>
-    <link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
-
-    <!-- nouislider -->
-    <link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
-
-    <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-
-    <!-- Custom stylesheet -->
-    <link type="text/css" rel="stylesheet" href="css/style.css"/>
-
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-    <!-- HEADER -->
-    <header>
-        <!-- TOP HEADER -->
-        <div id="top-header">
-            <div class="container">
-                <ul class="header-links pull-left">
-                    <li><a href="#"><i class="fa fa-phone"></i> <?php echo $contact['phone']; ?></a></li>
-                    <li><a href="#"><i class="fa fa-envelope-o"></i> <?php echo $contact['email']; ?></a></li>
-                    <li><a href="#"><i class="fa fa-map-marker"></i> <?php echo $contact['address']; ?></a></li>
-                </ul>
-                <ul class="header-links pull-right">
-                    <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-                    <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- /TOP HEADER -->
-
-        <!-- MAIN HEADER -->
-        <div id="header">
-            <div class="container">
-                <div class="row">
-                    <!-- LOGO -->
-                    <div class="col-md-3">
-                        <div class="header-logo">
-                            <a href="#" class="logo">
-                                <img src="./img/logo - Copy.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <!-- /LOGO -->
-
-                    <!-- SEARCH BAR -->
-                    <div class="col-md-6">
-                        <div class="header-search">
-                            <form>
-                                <select class="input-select">
-                                    <option value="0">All Categories</option>
-                                    <option value="1">Laptops</option>
-                                    <option value="1">Cameras</option>
-                                    <option value="1">Accessories</option>
-                                </select>
-                                <input class="input" placeholder="Search here">
-                                <button class="search-btn">Search</button>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- /SEARCH BAR -->
-
-                    <!-- ACCOUNT -->
-                    <div class="col-md-3 clearfix">
-                        <div class="header-ctn">
-                            <!-- Wishlist -->
-                            <div>
-                                <a href="#">
-                                    <i class="fa fa-heart-o"></i>
-                                    <span>Your Wishlist</span>
-                                    <div class="qty">2</div>
-                                </a>
-                            </div>
-                            <!-- /Wishlist -->
-
-                            <!-- Cart -->
-                            <div class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    <span>Your Cart</span>
-                                    <div class="qty">3</div>
-                                </a>
-                                <div class="cart-dropdown">
-                                    <div class="cart-list">
-                                        <div class="product-widget">
-                                            <div class="product-img">
-                                                <img src="./img/product01.png" alt="">
-                                            </div>
-                                            <div class="product-body">
-                                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                                <h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
-                                            </div>
-                                            <button class="delete"><i class="fa fa-close"></i></button>
-                                        </div>
-
-                                        <div class="product-widget">
-                                            <div class="product-img">
-                                                <img src="./img/product02.png" alt="">
-                                            </div>
-                                            <div class="product-body">
-                                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                                <h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
-                                            </div>
-                                            <button class="delete"><i class="fa fa-close"></i></button>
-                                        </div>
-                                    </div>
-                                    <div class="cart-summary">
-                                        <small>3 Item(s) selected</small>
-                                        <h5>SUBTOTAL: $2940.00</h5>
-                                    </div>
-                                    <div class="cart-btns">
-                                        <a href="#">View Cart</a>
-                                        <a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Cart -->
-
-                            <!-- Menu Toggle -->
-                            <div class="menu-toggle">
-                                <a href="#">
-                                    <i class="fa fa-bars"></i>
-                                    <span>Menu</span>
-                                </a>
-                            </div>
-                            <!-- /Menu Toggle -->
-                        </div>
-                    </div>
-                    <!-- /ACCOUNT -->
-                </div>
-            </div>
-        </div>
-        <!-- /MAIN HEADER -->
-    </header>
-    <!-- /HEADER -->
-
-    <!-- NAVIGATION -->
-    <nav id="navigation">
-        <div class="container">
-            <div id="responsive-nav">
-                <ul class="main-nav nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Store</a></li>
-                    <li><a href="#">Hot Deals</a></li>						
-                    <li><a href="#">New Products</a></li>
-                    <li><a href="#">Top Selling</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- /NAVIGATION -->
-
-    <!-- SECTION -->
     <div class="section">
         <div class="container">
             <div class="row">
-                <!-- Product main img -->
                 <div class="col-md-5 col-md-push-2">
                     <div id="product-main-img">
                         <div class="product-preview">
@@ -208,16 +26,13 @@ $product = [
                             <img src="./img/macpro.jpg" alt="">
                         </div>
                         <div class="product-preview">
-                            <img src="./img/product06.png" alt="">
+                            <img src="./img/wting.png" alt="">
                         </div>
                         <div class="product-preview">
-                            <img src="./img/product08.png" alt="">
+                            <img src="./img/zowie.png" alt="">
                         </div>
                     </div>
                 </div>
-                <!-- /Product main img -->
-
-                <!-- Product thumb imgs -->
                 <div class="col-md-2  col-md-pull-5">
                     <div id="product-imgs">
                         <div class="product-preview">
@@ -234,9 +49,6 @@ $product = [
                         </div>
                     </div>
                 </div>
-                <!-- /Product thumb imgs -->
-
-                <!-- Product details -->
                 <div class="col-md-5">
                     <div class="product-details">
                         <h2 class="product-name"><?php echo $product['name']; ?></h2>
@@ -310,22 +122,14 @@ $product = [
                         </ul>
                     </div>
                 </div>
-                <!-- /Product details -->
-
-                <!-- Product tab -->
                 <div class="col-md-12">
                     <div id="product-tab">
-                        <!-- product tab nav -->
                         <ul class="tab-nav">
                             <li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
                             <li><a data-toggle="tab" href="#tab2">Details</a></li>
                             <li><a data-toggle="tab" href="#tab3">Reviews (3)</a></li>
                         </ul>
-                        <!-- /product tab nav -->
-
-                        <!-- product tab content -->
                         <div class="tab-content">
-                            <!-- tab1  -->
                             <div id="tab1" class="tab-pane fade in active">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -333,9 +137,6 @@ $product = [
                                     </div>
                                 </div>
                             </div>
-                            <!-- /tab1  -->
-
-                            <!-- tab2  -->
                             <div id="tab2" class="tab-pane fade in">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -343,12 +144,8 @@ $product = [
                                     </div>
                                 </div>
                             </div>
-                            <!-- /tab2  -->
-
-                            <!-- tab3  -->
                             <div id="tab3" class="tab-pane fade in">
                                 <div class="row">
-                                    <!-- Rating -->
                                     <div class="col-md-3">
                                         <div id="rating">
                                             <div class="rating-avg">
@@ -430,9 +227,6 @@ $product = [
                                             </ul>
                                         </div>
                                     </div>
-                                    <!-- /Rating -->
-
-                                    <!-- Reviews -->
                                     <div class="col-md-6">
                                         <div id="reviews">
                                             <ul class="reviews">
@@ -475,9 +269,6 @@ $product = [
                                             </ul>
                                         </div>
                                     </div>
-                                    <!-- /Reviews -->
-
-                                    <!-- Review Form -->
                                     <div class="col-md-3">
                                         <div id="review-form">
                                             <form class="review-form" method="POST" action="submit_review.php">
@@ -498,21 +289,14 @@ $product = [
                                             </form>
                                         </div>
                                     </div>
-                                    <!-- /Review Form -->
-                                </div>
+                                    </div>
                             </div>
-                            <!-- /tab3  -->
+                            </div>
                         </div>
-                        <!-- /product tab content  -->
-                    </div>
                 </div>
-                <!-- /product tab -->
-            </div>
+                </div>
         </div>
     </div>
-    <!-- /SECTION -->
-
-    <!-- Section -->
     <div class="section">
         <div class="container">
             <div class="row">
@@ -531,7 +315,6 @@ $product = [
                 ];
                 
                 foreach($related_products as $prod): ?>
-                <!-- product -->
                 <div class="col-md-3 col-xs-6">
                     <div class="product">
                         <div class="product-img">
@@ -564,84 +347,11 @@ $product = [
                         </div>
                     </div>
                 </div>
-                <!-- /product -->
                 <?php endforeach; ?>
             </div>
         </div>
     </div>
-    <!-- /Section -->
-
-    <!-- NEWSLETTER -->
-    <div id="newsletter" class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="newsletter">
-                        <p>Sign Up for the <strong>NEWSLETTER</strong></p>
-                        <form method="POST" action="subscribe.php">
-                            <input class="input" type="email" name="email" placeholder="Enter Your Email" required>
-                            <button class="newsletter-btn" type="submit"><i class="fa fa-envelope"></i> Subscribe</button>
-                        </form>
-                        <ul class="newsletter-follow">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /NEWSLETTER -->
-
-    <!-- FOOTER -->
-    <footer id="footer">
-        <!-- top footer -->
-        <div class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-xs-6">
-                        <div class="footer">
-                            <h3 class="footer-title">About Us</h3>
-                            <p>ShineTechShop mang đến thế giới đồ điện tử và giải pháp công nghệ thông minh cho cuộc sống của bạn.</p>
-                            <ul class="footer-links">
-                                <li><a href="#"><i class="fa fa-map-marker"></i><?php echo $contact['address']; ?></a></li>
-                                <li><a href="#"><i class="fa fa-phone"></i><?php echo $contact['phone']; ?></a></li>
-                                <li><a href="#"><i class="fa fa-envelope-o"></i><?php echo $contact['email']; ?></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-xs-6">
-                        <div class="footer">
-                            <h3 class="footer-title">Categories</h3>
-                            <ul class="footer-links">
-                                <li><a href="#">Hot deals</a></li>
-                                <li><a href="#">Laptops</a></li>
-                                <li><a href="#">Cameras</a></li>
-                                <li><a href="#">Accessories</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="clearfix visible-xs"></div>
-
-                    <div class="col-md-3 col-xs-6">
-                        <div class="footer">
-                            <h3 class="footer-title">Information</h3>
-                            <ul class="footer-links">
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-xs-6">
-                        <div class="footer">
-                            <h3 class="footer-title">Service</h3>
-                            <ul class="footer-links">
-                                <li><a href="#">My Account</a></li>
-                                <li><a href="#">View Cart</a></li>
-                                <li><a href="#">Wishlist</a></li>
-                                <li><a href="#">Track My Order</a>
+    <?php 
+// Include file footer
+include 'footer.php'; 
+?>

@@ -19,22 +19,22 @@ $categories = [
 
 // Top selling products
 $top_selling = [
-    ['img' => 'mac.jpg', 'name' => 'product name goes here', 'category' => 'Category', 'price' => 980.00, 'old_price' => 990.00],
-    ['img' => 'product02.png', 'name' => 'product name goes here', 'category' => 'Category', 'price' => 980.00, 'old_price' => 990.00],
-    ['img' => 'product03.png', 'name' => 'product name goes here', 'category' => 'Category', 'price' => 980.00, 'old_price' => 990.00]
+    ['img' => 'mac.jpg', 'name' => 'MacBook Air 13 M4', 'category' => 'Laptops', 'price' => 1196.00, 'old_price' => 1708.00],
+    ['img' => 'razer.jpg', 'name' => 'Razer Nari - Wireless', 'category' => 'Accessories', 'price' => 130.00, 'old_price' => 150.00],
+    ['img' => 'lgtech.png', 'name' => 'Logitech G Pro X', 'category' => 'Accessories', 'price' => 98.00, 'old_price' => 120.00]
 ];
 
 // Danh sách sản phẩm trong store
 $products = [
-    ['img' => 'macpro.jpg', 'name' => 'product name goes here', 'category' => 'Category', 'price' => 980.00, 'old_price' => 990.00, 'rating' => 5, 'labels' => ['sale' => '-30%', 'new' => 'NEW']],
-    ['img' => 'product02.png', 'name' => 'product name goes here', 'category' => 'Category', 'price' => 980.00, 'old_price' => 990.00, 'rating' => 4, 'labels' => ['new' => 'NEW']],
-    ['img' => 'product03.png', 'name' => 'product name goes here', 'category' => 'Category', 'price' => 980.00, 'old_price' => 990.00, 'rating' => 0, 'labels' => []],
-    ['img' => 'product04.png', 'name' => 'product name goes here', 'category' => 'Category', 'price' => 980.00, 'old_price' => 990.00, 'rating' => 0, 'labels' => []],
-    ['img' => 'product05.png', 'name' => 'product name goes here', 'category' => 'Category', 'price' => 980.00, 'old_price' => 990.00, 'rating' => 0, 'labels' => []],
-    ['img' => 'product06.png', 'name' => 'product name goes here', 'category' => 'Category', 'price' => 980.00, 'old_price' => 990.00, 'rating' => 4, 'labels' => []],
-    ['img' => 'product07.png', 'name' => 'product name goes here', 'category' => 'Category', 'price' => 980.00, 'old_price' => 990.00, 'rating' => 5, 'labels' => []],
-    ['img' => 'product08.png', 'name' => 'product name goes here', 'category' => 'Category', 'price' => 980.00, 'old_price' => 990.00, 'rating' => 0, 'labels' => []],
-    ['img' => 'product09.png', 'name' => 'product name goes here', 'category' => 'Category', 'price' => 980.00, 'old_price' => 990.00, 'rating' => 0, 'labels' => []]
+    ['img' => 'macpro.jpg', 'name' => 'MacBook Pro M4', 'category' => 'Laptops', 'price' => 1299.00, 'old_price' => 1499.00, 'rating' => 5, 'labels' => ['sale' => '-15%', 'new' => 'NEW']],
+    ['img' => 'lenovo.png', 'name' => 'Lenovo Yoga Pro 9', 'category' => 'Laptops', 'price' => 1434.34, 'old_price' => 2049.06, 'rating' => 5, 'labels' => ['sale' => '-30%', 'new' => 'NEW']],
+    ['img' => 'mac.jpg', 'name' => 'MacBook Air 13 M4', 'category' => 'Laptops', 'price' => 1196.00, 'old_price' => 1708.00, 'rating' => 0, 'labels' => ['sale' => '-30%']],
+    ['img' => 'canon.png', 'name' => 'Canon EOS R7 (Body)', 'category' => 'Cameras', 'price' => 1480.00, 'old_price' => 2050.00, 'rating' => 5, 'labels' => []],
+    ['img' => 'pulsar.jpg', 'name' => 'Pulsar Xlite V4', 'category' => 'Accessories', 'price' => 110.00, 'old_price' => 115.00, 'rating' => 5, 'labels' => []],
+    ['img' => 'hpx.jpg', 'name' => 'HyperX Cloud II', 'category' => 'Accessories', 'price' => 980.00, 'old_price' => 990.00, 'rating' => 4, 'labels' => []],
+    ['img' => 'wting.png', 'name' => 'Wooting 60HE', 'category' => 'Accessories', 'price' => 980.00, 'old_price' => 990.00, 'rating' => 5, 'labels' => []],
+    ['img' => 'sonyWh.jpg', 'name' => 'Sony WH-1000XM5', 'category' => 'Accessories', 'price' => 980.00, 'old_price' => 990.00, 'rating' => 0, 'labels' => []],
+    ['img' => 'zowie.png', 'name' => 'Zowie EC2', 'category' => 'Accessories', 'price' => 980.00, 'old_price' => 990.00, 'rating' => 0, 'labels' => []]
 ];
 
 // Hàm hiển thị rating stars
@@ -151,7 +151,7 @@ function displayRating($rating) {
                                     <div class="cart-list">
                                         <div class="product-widget">
                                             <div class="product-img">
-                                                <img src="./img/product01.png" alt="">
+                                                    <img src="./img/macpro.jpg" alt="">
                                             </div>
                                             <div class="product-body">
                                                 <h3 class="product-name"><a href="#">product name goes here</a></h3>
@@ -162,7 +162,7 @@ function displayRating($rating) {
 
                                         <div class="product-widget">
                                             <div class="product-img">
-                                                <img src="./img/product02.png" alt="">
+                                                    <img src="./img/razer.jpg" alt="">
                                             </div>
                                             <div class="product-body">
                                                 <h3 class="product-name"><a href="#">product name goes here</a></h3>

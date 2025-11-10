@@ -9,10 +9,10 @@
                             <button class="newsletter-btn" type="submit"><i class="fa fa-envelope"></i> Subscribe</button>
                         </form>
                         <ul class="newsletter-follow">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="https://www.facebook.com/PogDad"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://x.com/"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/__phucslee_/"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                         <div class="footer">
                             <h3 class="footer-title">Categories</h3>
                             <ul class="footer-links">
-                                <li><a href="#">Hot deals</a></li>
+                                <li><a href="<?php echo ($current_page == 'index.php') ? '#hot-deal' : 'index.php#hot-deal'; ?>">Hot deals</a></li>
                                 <li><a href="#">Laptops</a></li>
                                 <li><a href="#">Cameras</a></li>
                                 <li><a href="#">Accessories</a></li>
@@ -53,8 +53,8 @@
                         <div class="footer">
                             <h3 class="footer-title">Information</h3>
                             <ul class="footer-links">
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="privacy.php">Privacy Policy</a></li>
+                                <li><a href="terms.php">Terms & Conditions</a></li>
                             </ul>
                         </div>
                     </div>
@@ -64,10 +64,7 @@
                             <h3 class="footer-title">Service</h3>
                             <ul class="footer-links">
                                 <li><a href="#">My Account</a></li>
-                                <li><a href="#">View Cart</a></li>
-                                <li><a href="#">Wishlist</a></li>
-                                <li><a href="#">Track My Order</a></li>
-                                <li><a href="#">Help</a></li>
+                                <li><a href="help.php">Help</a></li>
                             </ul>
                         </div>
                     </div>
@@ -100,5 +97,8 @@
     <script src="js/nouislider.min.js"></script>
     <script src="js/jquery.zoom.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/filters-submit.js"></script>
+    <script src="js/sort-submit.js"></script>
+    <script src="js/view-switcher.js"></script>
 </body>
 </html>

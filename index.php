@@ -322,25 +322,25 @@
 								<ul class="hot-deal-countdown">
 									<li>
 										<div>
-											<h3>02</h3>
+											<h3><span id="hd-days">02</span></h3>
 											<span>Days</span>
 										</div>
 									</li>
 									<li>
 										<div>
-											<h3>10</h3>
+											<h3><span id="hd-hours">10</span></h3>
 											<span>Hours</span>
 										</div>
 									</li>
 									<li>
 										<div>
-											<h3>34</h3>
+											<h3><span id="hd-mins">34</span></h3>
 											<span>Mins</span>
 										</div>
 									</li>
 									<li>
 										<div>
-											<h3>60</h3>
+											<h3><span id="hd-secs">60</span></h3>
 											<span>Secs</span>
 										</div>
 									</li>
@@ -352,6 +352,8 @@
 						</div>
 					</div>
 					</div>
+
+							<script src="./js/hotdeal.js"></script>
 				</div>
 			<div id="top-selling" class="section">
 				<div class="container">

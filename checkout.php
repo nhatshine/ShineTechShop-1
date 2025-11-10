@@ -113,14 +113,20 @@
 								<div><strong>TOTAL</strong></div>
 							</div>
 							<div class="order-products">
-								<div class="order-col">
-									<div>1x Product Name Goes Here</div>
-									<div>$980.00</div>
-								</div>
-								<div class="order-col">
-									<div>2x Product Name Goes Here</div>
-									<div>$980.00</div>
-								</div>
+									<div class="order-col">
+										<div style="display:flex;align-items:center;">
+											<img src="./img/macpro.jpg" alt="" style="width:60px;height:auto;margin-right:10px;border:1px solid #eee;padding:2px;">
+											<div>1x MacBook Pro M4</div>
+										</div>
+										<div>$1299.00</div>
+									</div>
+									<div class="order-col">
+										<div style="display:flex;align-items:center;">
+											<img src="./img/razer.jpg" alt="" style="width:60px;height:auto;margin-right:10px;border:1px solid #eee;padding:2px;">
+											<div>2x Razer Nari - Wireless</div>
+										</div>
+										<div>$260.00</div>
+									</div>
 							</div>
 							<div class="order-col">
 								<div>Shiping</div>
