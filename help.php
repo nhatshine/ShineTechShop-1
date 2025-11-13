@@ -85,8 +85,7 @@
 								<ul class="list-unstyled">
 									<li><a href="terms.php">Terms & Conditions</a></li>
 									<li><a href="privacy.php">Privacy Policy</a></li>
-									<li><a href="#">Shipping Information</a></li>
-									<li><a href="#">Payment Methods</a></li>
+									
 								</ul>
 							</div>
 						</div>

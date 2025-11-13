@@ -59,10 +59,6 @@ body {
   color: #333;
 }
 
-/* Increase base font size for better readability */
-body {
-  font-size: 18px;
-}
 
 h1, h2, h3, h4, h5, h6 {
   color: #2B2D42;
@@ -473,6 +469,7 @@ textarea.input {
 
 .header-search form {
   position: relative;
+  display: flex;
 }
 
 .header-search form .input-select {
@@ -481,7 +478,8 @@ textarea.input {
 }
 
 .header-search form .input {
-  width: calc(100% - 260px);
+  /* width: calc(100% - 260px); */
+  flex: 1;
   margin-right: -4px;
 }
 
@@ -887,16 +885,7 @@ textarea.input {
   margin-bottom: 0px;
 }
 
-/* Make the countdown numbers larger and bolder for better visibility */
-.hot-deal .hot-deal-countdown>li>div h3 span {
-  display: inline-block;
-  font-size: 36px; /* larger number size */
-  font-weight: 700;
-  line-height: 1;
-  min-width: 56px;
-  text-align: center;
-  color: #FFF;
-}
+
 
 /* Slightly increase the label size (Days/Hours/Mins/Secs) */
 .hot-deal .hot-deal-countdown>li>div span {
@@ -1989,56 +1978,7 @@ textarea.input {
 .input-radio input[type="radio"]:checked ~ .caption {
     display: block;
 }
-/* Product List View */
-.product-list {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin: 15px 0;
-}
 
-.product-list .product-img {
-    flex: 0 0 250px;
-    max-width: 250px;
-}
-
-.product-list .product-body {
-    flex: 1;
-    text-align: left;
-    padding: 20px 30px;
-}
-
-.product-list .product-body .product-name {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.product-list .product-body .product-price {
-    margin-bottom: 15px;
-}
-
-.product-list .add-to-cart {
-    position: static;
-    transform: none;
-    margin-top: 15px;
-    background: none;
-}
-
-/* Hide clearfix divs in list view */
-.product-list + .clearfix {
-    display: none;
-}
-
-/* Grid/List View Container */
-.products-grid {
-    transition: all 0.3s ease;
-}
-
-.products-grid.list-view .col-md-4 {
-    width: 100%;
-    flex: 0 0 100%;
-    max-width: 100%;
-}
 
 /*=========================================================
 	10 -> NEWSLETTER

@@ -107,7 +107,6 @@ $paged_products = array_slice($filtered_products, $offset, $perPage);
         <div class="container">
             <div class="row">
                 <div id="aside" class="col-md-3">
-                    <!-- Filters form (PHP-only) -->
                     <form method="get" id="filters">
                     <div class="aside">
                         <h3 class="aside-title">Categories</h3>
@@ -178,13 +177,7 @@ $paged_products = array_slice($filtered_products, $offset, $perPage);
                                     <option value="rating-desc" <?php echo $sort === 'rating-desc' ? 'selected' : ''; ?>>Highest Rated</option>
                                 </select>
                             </label>
-                        </div>
-                        <ul class="store-grid">
-                            <li class="active" id="grid-view"><i class="fa fa-th"></i></li>
-                            <li id="list-view"><i class="fa fa-th-list"></i></li>
-                        </ul>
-                    </div>
-                    <div class="row" id="product-grid">
+                        </div> </div> <div class="row" id="product-grid">
                         <?php foreach($paged_products as $i => $product): ?>
                         <?php $index = $offset + $i; ?>
                         <div class="col-md-4 col-xs-6">
@@ -205,7 +198,7 @@ $paged_products = array_slice($filtered_products, $offset, $perPage);
                                 <div class="product-body">
                                     <p class="product-category"><?php echo $product['category']; ?></p>
                                     <h3 class="product-name"><a href="#"><?php echo $product['name']; ?></a></h3>
-                                    <h4 class="product-price">$<?php echo number_format($product['price'], 2); ?> 
+                                    <h4 class="product-price">$<?php echo number_format($product['price'], 2); ?>
                                         <del class="product-old-price">$<?php echo number_format($product['old_price'], 2); ?></del>
                                     </h4>
                                     <div class="product-rating">
@@ -263,4 +256,4 @@ $paged_products = array_slice($filtered_products, $offset, $perPage);
                 </div>
         </div>
     </div>
-    <?php include 'footer.php'; ?>
+<?php include 'footer.php'; ?>

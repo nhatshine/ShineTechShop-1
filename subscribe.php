@@ -1,6 +1,15 @@
 <?php
-// Kết nối header
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+
+require 'vendor/autoload.php';
+
+// Kết nối header và config database
 include 'header.php';
+include 'database.php'; 
 
 // Khởi tạo biến thông báo
 $message = '';
@@ -10,32 +19,70 @@ $messageType = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     
-    // Kiểm tra email có hợp lệ không
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        // Trong thực tế, bạn sẽ lưu email vào database
-        // Ví dụ đơn giản: lưu vào file txt
-        $file = 'subscribers.txt';
-        $current = file_get_contents($file);
         
-        // Kiểm tra xem email đã tồn tại chưa
-        if (strpos($current, $email) !== false) {
+        $stmt_check = $conn->prepare("SELECT email FROM subscribers WHERE email = ?");
+        $stmt_check->bind_param("s", $email);
+        $stmt_check->execute();
+        $result = $stmt_check->get_result();
+        
+        if ($result->num_rows > 0) {
             $message = "Email này đã đăng ký nhận bản tin!";
             $messageType = "warning";
         } else {
-            // Thêm email mới vào file
-            $current .= $email . "\n";
-            file_put_contents($file, $current);
+            $stmt_insert = $conn->prepare("INSERT INTO subscribers (email) VALUES (?)");
+            $stmt_insert->bind_param("s", $email);
             
-            $message = "Cảm ơn bạn đã đăng ký nhận bản tin từ ShineTechShop!";
-            $messageType = "success";
-            
-            // Gửi email xác nhận (trong thực tế)
-            // mail($email, "Xác nhận đăng ký bản tin", "Cảm ơn bạn đã đăng ký nhận bản tin từ ShineTechShop!");
+            if ($stmt_insert->execute()) {
+                
+                // ---- BẮT ĐẦU GỬI MAIL VỚI CHẾ ĐỘ DEBUG ----
+                $mail = new PHPMailer(true);
+                try {
+                    // Cấu hình Server
+                    
+                    $mail->isSMTP();
+                    $mail->Host       = 'smtp.gmail.com';
+                    $mail->SMTPAuth   = true;
+                    $mail->Username   = 'xuannhat2k4@gmail.com'; 
+                    $mail->Password   = 'whjg pcwu oxzi axfs';     
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                    $mail->Port       = 465;
+                    $mail->CharSet    = 'UTF-8';
+
+                    // Người gửi và Người nhận
+                    $mail->setFrom('xuannhat2k4@gmail.com', 'ShineTechShop'); // Email và Tên người gửi
+                    $mail->addAddress($email); // Email người nhận (chính là email vừa đăng ký)
+
+                    // Nội dung
+                    $mail->isHTML(true);
+                    $mail->Subject = 'Xac nhan dang ky nhan ban tin tu ShineTechShop';
+                    $mail->Body    = 'Cảm ơn bạn đã đăng ký nhận bản tin từ <b>ShineTechShop</b>! Chúng tôi sẽ sớm gửi cho bạn những ưu đãi mới nhất.';
+                    $mail->AltBody = 'Cam on ban da dang ky nhan ban tin tu ShineTechShop!';
+
+                    $mail->send();
+                    
+                    $message = "Đăng ký thành công! Vui lòng kiểm tra email.";
+                    $messageType = "success";
+                    
+                } catch (Exception $e) {
+                    // Lỗi khi gửi mail
+                    $message = "Đã lưu email, nhưng gửi mail thất bại. Lỗi: {$mail->ErrorInfo}";
+                    $messageType = "warning";
+                }
+                // ---- KẾT THÚC GỬI MAIL ----
+                
+            } else {
+                $message = "Đã có lỗi xảy ra khi đăng ký. Vui lòng thử lại.";
+                $messageType = "danger";
+            }
+            $stmt_insert->close();
         }
+        $stmt_check->close();
     } else {
         $message = "Email không hợp lệ!";
         $messageType = "danger";
     }
+    $conn->close();
 }
 ?>
 
@@ -53,7 +100,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <?php endif; ?>
 
                    
-
                     
                 </div>
             </div>
@@ -75,21 +121,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     padding: 15px;
     border-radius: 4px;
 }
-.alert-success {
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #3c763d;
-}
-.alert-warning {
-    background-color: #fcf8e3;
-    border-color: #faebcc;
-    color: #8a6d3b;
-}
-.alert-danger {
-    background-color: #f2dede;
-    border-color: #ebccd1;
-    color: #a94442;
-}
+.alert-success { background-color: #dff0d8; border-color: #d6e9c6; color: #3c763d; }
+.alert-warning { background-color: #fcf8e3; border-color: #faebcc; color: #8a6d3b; }
+.alert-danger { background-color: #f2dede; border-color: #ebccd1; color: #a94442; }
 </style>
 
 <?php include 'footer.php'; ?>
